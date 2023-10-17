@@ -21,9 +21,9 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: docker-gh # UPDATE
-          environment_name: Dockergh-env # UPDATE
-          existing_bucket_name: elasticbeanstalk-us-east-1-923445559289 # UPDATE
-          region: us-east-1 # UPDATE
+          application_name: frontend-app # UPDATE
+          environment_name: e-54iphv953h # UPDATE
+          existing_bucket_name: elasticbeanstalk-us-west-2-432880912568 # UPDATE
+          region: us-west-2 # UPDATE
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
