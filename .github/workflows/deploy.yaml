@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: echo ${{ secrets.DOCKER_USERNAME }}
 #      - run: docker login index.docker.io -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - run: echo aaa | docker login -u bbb --password-stdin
       - run: docker build -t cygnetops/react-test -f Dockerfile.dev .
