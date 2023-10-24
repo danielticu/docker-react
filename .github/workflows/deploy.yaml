@@ -10,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-#      - run: echo dckr_pat_5cc4oi9_FIcEZSrdRYyXwv5fmgE | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
       - run: docker build -t cygnetops/react-test -f Dockerfile.dev .
       - run: docker run -e CI=true cygnetops/react-test npm test
 
@@ -23,7 +22,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
           application_name: frontend-app # UPDATE
-          environment_name: e-54iphv953h # UPDATE
+          environment_name: Frontend-app-env # UPDATE
           existing_bucket_name: elasticbeanstalk-us-west-2-432880912568 # UPDATE
           region: us-west-2 # UPDATE
           version_label: ${{ github.sha }}
